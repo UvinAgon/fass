@@ -3,11 +3,25 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import 'bootstrap/dist/css/bootstrap.css';
+// import Counter from './components/counter';
+import PageFinance from './components/pageFinance';
+import AddTransaction from './components/popups/addTransaction';
+import ModelPopup from './components/popups/modelPopup';
+import Test from './components/test';
+import FiltersFunc from './components/filtersFunc';
+import Filters from './components/filters';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    {/* <Counter /> */}
+    <PageFinance />
+    {/* <AddTransaction />  */}
+    {/* <ModelPopup /> */}
+    {/* <Test/> */}
+    {/* <Filters/> */}
+    {/* <FiltersFunc/> */}
   </React.StrictMode>
 );
 
