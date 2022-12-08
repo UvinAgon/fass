@@ -8,7 +8,7 @@ import React, { Component, useState } from 'react';
 // import 'react-date-range/dist/theme/default.css'; // theme css file
 
 function Test(engine) {
-  axios()
+  axios('https://randomuser.me/?nat=US&result=5').then(res => console.log(res))
 //   let name = 'uvin'
 //   let car = prompt('Car is ')
    

@@ -15,6 +15,15 @@ class balanceDashboard extends Component {
         backgroundImage: `linear-gradient(135deg,#548ec9 45%,#152d54 85%)`,
         justifyContent: `right`
     }
+    summery = () => {
+        return (
+            <div style={this.hrzFlow}>
+                <div style={this.total}>
+                    <Balance/>
+                </div>
+            </div>
+        );
+    }
     render() { 
         return (
             <div style={this.hrzFlow}>
