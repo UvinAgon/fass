@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 // import BalanceDashboard from '../components/balanceDashboard';
 // import Transactions from '../components/transactions';
-// import Balance from '../components/balanceCard';
-import AddTransaction from './addTransactionLight';
+import Balance from '../components/balanceCard';
+import AddTransaction from './addTransactionLightFunc';
 
 class PageFinanceLight extends Component {
     state = {  } 
@@ -32,7 +32,7 @@ class PageFinanceLight extends Component {
                     <div style={this.table}><Transactions/></div> */}
                 </div>
                 <div style={this.pagination} className='col-md-3'>
-                    {/* <div style={{backgroundColor:`#42a99b`, height: `180px`}}><Balance/></div> */}
+                    <div style={{backgroundColor:`#42a99b`, height: `180px`}}><Balance/></div>
                     <div style={{backgroundColor:`#16443e`, height: `500px`}}><AddTransaction/></div>
                 </div>
             </div>
