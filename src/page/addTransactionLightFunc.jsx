@@ -1,8 +1,7 @@
-import { type } from '@testing-library/user-event/dist/type';
 import React, { useState } from 'react';
 
 const AddTransactionLight = () => {
-
+    const [isChecked, setIsChecked] = useState(false)
     const [transaction, setTransaction] = useState({
         type:"Expense",
         date: new Date().toISOString().split('T')[0],
@@ -15,11 +14,24 @@ const AddTransactionLight = () => {
     const handleInputChanged = (event) => {
         setTransaction(transaction => ({
             ...transaction,
-            // type:event.target.type === 'checkbox' ? event.target.checked = "inc"
             [event.target.name]: event.target.value
         }))
     }
-
+    const handleType = () => {
+        const newType = !isChecked
+        setIsChecked(newType)
+        if(newType===true) {
+            setTransaction(transaction => ({
+                ...transaction,
+                type: "Income"
+            }))
+        }else if(newType===false){
+            setTransaction(transaction => ({
+                ...transaction,
+                type: "Expense"
+            }))
+        }
+    }
     const resetButtonClicked = () => {
         setTransaction(transaction => ({
             ...transaction
@@ -42,9 +54,8 @@ const AddTransactionLight = () => {
                             type="checkbox" 
                             id="IncomeExpenseSwitch" 
                             name='type'
-                            // checked={transaction.type === 'Income'}
-                            // onChange={handleInputChanged}
-                            onChange={()=>setTransaction({type:"Income"})}
+                            checked={isChecked}
+                            onChange={handleType}
                             />
                         <label className="form-check-label" >Income</label>
                     </div>
@@ -86,6 +97,7 @@ const AddTransactionLight = () => {
                             aria-describedby='inputGroup-sizing-sm'
                             value={transaction.description} 
                             onChange={handleInputChanged} 
+                            // autoComplete="off"
                         />
                     </div>
                     <div className='input-group mb-4'>
