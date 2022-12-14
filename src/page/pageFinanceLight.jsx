@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 // import BalanceDashboard from '../components/balanceDashboard';
 // import Transactions from '../components/transactions';
-import Balance from '../components/balanceCard';
+// import Balance from '../components/balanceCard';
+import Balance from './balanceCardLight';
 import AddTransaction from './addTransactionLightFunc';
 
 class PageFinanceLight extends Component {
